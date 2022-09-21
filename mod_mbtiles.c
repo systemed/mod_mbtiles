@@ -208,7 +208,7 @@ static int mbtiles_handler(request_rec *r) {
 	}
 
 	// invert y for TMS
-	if (y != 0) y = ((1 << z) - y - 1);
+	y = ((1 << z) - y - 1);
 
 	// read tile
 	if (SQLITE_OK!=readTile(tilesets[c].db, z, x, y, &tile, &tileSize) ) {
